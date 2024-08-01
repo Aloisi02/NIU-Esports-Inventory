@@ -1,0 +1,122 @@
+/* For filters down arrow */
+.arrow {
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+}
+.down {
+    transform: translate(0,-5px) rotate(45deg);
+    -webkit-transform: translate(0,-5px) rotate(45deg) ;
+}
+
+.filters{
+    color: black;
+    font-size: 30px;
+    left: 100px;
+    height: 50px;
+    font-weight: bold;
+}
+
+.dropdown {
+    font-size: 16px;
+    display: none;
+    position: fixed;
+    background-color: #c8102e;
+    min-width: 215px;
+    min-height: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 15px;
+    top: 50px;
+    left: -50px;
+    border: 1px solid #a5a7a8;
+    text-align: left;
+    z-index: 2;
+}
+
+.filtershover {
+    cursor: default;
+    position: fixed;
+    top: 0px;
+    left: -50px;
+    height: 50px;
+    width: 125px;
+    z-index: 1;
+}
+
+
+.filters:hover .dropdown {
+    display: block;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+thead {
+    position:sticky;
+    top:0;
+}
+
+tbody {
+    overflow-y: scroll;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    /* Apply both top and bottom borders to the <th> */
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+td {
+    /* For cells, apply the border to one of each side only (right but not left, bottom but not top) */
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    font-weight: normal;
+    text-align: center;
+}
+
+table th:first-child,
+table td:first-child {
+    /* Apply a left border on the first <td> or <th> in a row */
+    border-left: 1px solid #ddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #c8102e;
+}
+
+tr:nth-child(even) {
+    background-color: black;
+}
+
+.functions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 10;
+    background-color: #c8102e;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom:5%;
+}
+
+.back {
+    width: 30px;
+    left: 30px;
+    cursor: pointer;
+}

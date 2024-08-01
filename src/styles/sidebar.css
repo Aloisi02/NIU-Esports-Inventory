@@ -1,0 +1,77 @@
+.sidebar{
+    position: fixed;
+    width: 240px;
+    left: -242px;
+    height: 100%;
+    background-color: #111;
+    transition: all .5s ease;
+    z-index: 10;
+      letter-spacing: .5px;
+    font-weight: bold;
+    color: #eee;
+}
+.sidebar header{
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #111;
+    user-select: none;
+}
+.sidebar a{
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: white;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    transition: all .5s ease;
+    text-decoration: none;
+    font-size: 20px;
+}
+.sidebar > a.active,.sidebar > a:hover {
+    --accent-color: #a5a7a8;
+}
+.sidebar > a:hover {
+    border-left: 5px solid var(--accent-color);
+    color: #fff;
+    background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
+}
+.sidebar > a.active {
+    border-left: 5px solid #c8102e;
+    color: #fff;
+    background: linear-gradient(to left, #c8102e, var(--gradient-color));
+}
+
+#check{
+    display: none;
+}
+label #btn,label #cancel{
+    position: fixed;
+    left: 0px;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    line-height: 45px;
+    transition: all .5s ease;
+    z-index: 8;
+}
+label #cancel{
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+#overlay {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.5);
+}
