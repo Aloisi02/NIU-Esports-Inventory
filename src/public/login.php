@@ -54,7 +54,7 @@
 		<!-- Linked image -->
 		<div class="center">
 			<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-				<img class="centerimg" src="../images/logo.png">
+				<img class="centerimg" src="../images/logo.png"/>
 			</a>
 		</div><br/>
 		
