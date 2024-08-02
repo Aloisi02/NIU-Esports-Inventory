@@ -8,10 +8,7 @@ if(!isset($_GET["token"])){
 session_destroy();
 
 // connect to db
-try{
-    $connection = mysqli_connect($host, $username, $password, $dbname);
-}catch(mysqli_sql_exception $e){}
-
+include "../api/database.php";
 if(mysqli_connect_errno()) {
     header("Location: login.php?connection=failed");
 }
