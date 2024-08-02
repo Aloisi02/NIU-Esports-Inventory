@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 //use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 $url = 'localhost:8000/';
 $emailuser = 'niuesportspassreset@gmail.com';
 $mainAdmin = 'marioman2002@gmail.com';
