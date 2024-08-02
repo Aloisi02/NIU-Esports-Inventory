@@ -5,7 +5,7 @@ session_start();
 $_POST = json_decode(file_get_contents('php://input'), true);
 if(!isset($_POST['username'])){
     header("Location: ../public/devices.php?type=PC");
-    die();
+    die($_POST['username']);
 }
 
 
