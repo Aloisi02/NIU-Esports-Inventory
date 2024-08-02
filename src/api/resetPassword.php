@@ -6,7 +6,7 @@ session_destroy();
 // get post data
 $_POST = json_decode(file_get_contents('php://input'), true);
 if(!isset($_POST['id'])){
-    header("Location: ../public/devices.php?type=PC");
+    //header("Location: ../public/devices.php?type=PC");
     die();
 }
 
