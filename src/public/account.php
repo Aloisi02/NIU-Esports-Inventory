@@ -1,5 +1,3 @@
-<!-- PHP to verify the user is logged in -->
-
 <?php
 	session_start();
 
