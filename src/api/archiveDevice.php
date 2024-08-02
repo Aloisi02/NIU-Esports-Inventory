@@ -27,7 +27,7 @@ if($_SESSION['perm'] != 1){
 // sets the archive status of a device
 $id = (int) $_POST['id'];
 $archive = (int) $_POST['archive'];
-if($statement = $connection->prepare("UPDATE device SET archived = ? WHERE id = ?")){
+if($statement = $connection->prepare("UPDATE Device SET archived = ? WHERE id = ?")){
     $statement->bind_param("ii", $archive, $id);
     $statement->execute();
     $statement->store_result();

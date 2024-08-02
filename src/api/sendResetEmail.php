@@ -46,10 +46,10 @@ if(isset($_SESSION["loggedin"])){
 
 
 // delete any old password reset entries
-mysqli_query($connection, "DELETE FROM changepass WHERE time_created < DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
+mysqli_query($connection, "DELETE FROM ChangePass WHERE time_created < DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
 
 // gets existing token / password change requests if any
-$result = mysqli_query($connection, "SELECT * FROM changepass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
+$result = mysqli_query($connection, "SELECT * FROM ChangePass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
 // $token = mysqli_fetch_assoc($result);
 
 // check for existing pass reset
@@ -63,7 +63,7 @@ if(mysqli_num_rows($result) > 0){
 $token = bin2hex(random_bytes(16));
 
 // insert token into database
-if($statement = $connection->prepare("INSERT INTO changepass (token) VALUES (?)")){
+if($statement = $connection->prepare("INSERT INTO ChangePass (token) VALUES (?)")){
     $statement->bind_param("s", $token);
     $statement->execute();
     $statement->store_result();
@@ -106,7 +106,7 @@ try {
     die(json_encode($response));
 } catch (Exception $e){
     // if error emailing delete entry from table
-    mysqli_query($connection, "DELETE FROM changepass");
+    mysqli_query($connection, "DELETE FROM ChangePass");
     $response = ['success'=>'false','reason'=>'Error sending password reset email. Contact system admin if problem persists.\nBe sure to check your spam folder.' ];
     http_response_code(400);
     die(json_encode($response));

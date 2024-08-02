@@ -31,7 +31,7 @@ if(strlen($summary) > 48 || strlen($summary) < 5 || strlen($details) > 1024 || $
     die(json_encode($response));
 }
 // check if the device is archived
-if($statement = $connection->prepare("SELECT IF (EXISTS (SELECT * FROM device WHERE id = ? AND archived = 1), 1, 0)")){
+if($statement = $connection->prepare("SELECT IF (EXISTS (SELECT * FROM Device WHERE id = ? AND archived = 1), 1, 0)")){
     $statement->bind_param("i", $id);
     $statement->execute();
     $res = $statement->get_result();
@@ -65,7 +65,7 @@ if($_POST['ticket'] != false){
     }
 
     // create ticket and get the ID
-    if($statement = $connection->prepare("INSERT INTO ticket (device) VALUES (?)")){
+    if($statement = $connection->prepare("INSERT INTO Ticket (device) VALUES (?)")){
         $statement->bind_param("i", $id);
         $statement->execute();
         $statement->store_result();

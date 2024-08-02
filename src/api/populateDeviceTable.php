@@ -32,7 +32,7 @@ function populateDeviceTable($devices, $connection){
                 $issue = "none";
 
                 // get the highest status and issue for the device for status and issues columns
-                if($statement = $connection->prepare("WITH subq1 as (SELECT * FROM updates WHERE ticket IN (SELECT id FROM ticket WHERE device = ?)), subq2 AS (SELECT * FROM subq1 INNER JOIN (SELECT MAX(time) AS maxTime FROM subq1 GROUP BY ticket) AS tmp ON subq1.time = tmp.maxTime) SELECT summary, MAX(status) as status FROM subq2 GROUP BY summary ORDER BY status DESC LIMIT 1")){
+                if($statement = $connection->prepare("WITH subq1 as (SELECT * FROM Updates WHERE ticket IN (SELECT id FROM Ticket WHERE device = ?)), subq2 AS (SELECT * FROM subq1 INNER JOIN (SELECT MAX(time) AS maxTime FROM subq1 GROUP BY ticket) AS tmp ON subq1.time = tmp.maxTime) SELECT summary, MAX(status) as status FROM subq2 GROUP BY summary ORDER BY status DESC LIMIT 1")){
                     $statement->bind_param("i", $id);
                     $statement->execute();
                     $statement->store_result();

@@ -26,7 +26,7 @@ if($_SESSION['perm'] != 1){
 
 // delete
 $id = (int) $_POST['id'];
-if($statement = $connection->prepare("DELETE FROM device WHERE id = ?")){
+if($statement = $connection->prepare("DELETE FROM Device WHERE id = ?")){
     $statement->bind_param("i", $id);
     $statement->execute();
     $statement->store_result();

@@ -17,7 +17,7 @@ if(mysqli_connect_errno()) {
 }
 
 
-$result = mysqli_query($connection, "SELECT token FROM changepass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE) LIMIT 1");
+$result = mysqli_query($connection, "SELECT token FROM ChangePass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE) LIMIT 1");
 
 // make sure token hasn't expired
 if(mysqli_num_rows($result) < 1){

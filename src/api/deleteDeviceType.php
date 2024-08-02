@@ -29,7 +29,7 @@ $type = $_POST['type'];
 $device = $_POST['deviceType'];
 $deviceType = $_POST['deviceType'] . "Types";
 // first delete any devices of the given type
-if($statement = $connection->prepare("DELETE FROM device WHERE id IN (SELECT id FROM " . $device . " WHERE type = ?)")){
+if($statement = $connection->prepare("DELETE FROM Device WHERE id IN (SELECT id FROM " . $device . " WHERE type = ?)")){
     $statement->bind_param("s", $type);
     $statement->execute();
     $statement->store_result();
