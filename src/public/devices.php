@@ -1,5 +1,3 @@
-<!-- PHP to verify the user is logged in -->
-
 <?php
 	session_start();
 
@@ -1009,7 +1007,7 @@
 			<a  <?php echo $sideVR;?>>
 				<span>VR</span>
 			</a>
-			<a href="Inventory.php">
+			<a href="inventory.php">
 				<span>Inventory</span>
 			</a>
 			<a href="account.php">
