@@ -17,7 +17,7 @@ if(mysqli_connect_errno()) {
 }
 
 // get the tickets for a specific device
-if($statement = $connection->prepare("SELECT * FROM updates WHERE ticket IN (SELECT id FROM ticket WHERE device = ?) ORDER BY ticket DESC")){
+if($statement = $connection->prepare("SELECT * FROM Updates WHERE ticket IN (SELECT id FROM ticket WHERE device = ?) ORDER BY ticket DESC")){
     $statement->bind_param("i", $_POST['device']);
     $statement->execute();
     $result = $statement->get_result();
