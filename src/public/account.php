@@ -458,7 +458,7 @@
 				if($perm < 2){
 					echo '<a href="devices.php?type=PC"><span>PCs</span></a><a href="devices.php?type=Console">' . 
 					'<span>Consoles</span></a><a href="devices.php?type=VR"><span>VR</span></a>' . 
-					'<a href="Inventory.php"><span>Inventory</span></a>';
+					'<a href="inventory.php"><span>Inventory</span></a>';
 				}
 			?>
 			<a href="#" class="active" onclick="return false;">
