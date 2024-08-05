@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../../vendor/autoload.php';
 $url = 'http://18.221.223.90/src/public/';
 $emailuser = 'niuesportspassreset@gmail.com';
-$mainAdmin = 'marioman2002@gmail.com';
+$mainAdmin = 'esports@niu.edu';
 
 session_start();
 
