@@ -147,8 +147,6 @@ if($token != $_GET["token"]){
 					let output;
 					failedResponse(res.reason, "Failed to update password.");
 				}
-
-
 			}
         </script>
 	</head>

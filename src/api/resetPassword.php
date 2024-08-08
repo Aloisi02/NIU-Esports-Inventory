@@ -54,8 +54,8 @@ if($token1 != $token2){
 }
 
 // checks have passed and password can be updated
-if($statement = $connection->prepare("UPDATE Account SET password = ? WHERE username = ?")){
-    $statement->bind_param("ss", $new, $mainAdmin);
+if($statement = $connection->prepare("UPDATE Account SET password = ? WHERE username = 'esports@niu.edu'")){
+    $statement->bind_param("s", $new);
     $statement->execute();
     $statement->store_result();
 
