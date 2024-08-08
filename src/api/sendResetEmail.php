@@ -46,10 +46,10 @@ if(isset($_SESSION["loggedin"])){
 
 
 // delete any old password reset entries
-mysqli_query($connection, "DELETE FROM ChangePass WHERE time_created < DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
+mysqli_query($connection, "DELETE FROM ChangePass WHERE time_created < DATE_SUB(NOW(), INTERVAL 20 MINUTE)");
 
 // gets existing token / password change requests if any
-$result = mysqli_query($connection, "SELECT * FROM ChangePass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE)");
+$result = mysqli_query($connection, "SELECT * FROM ChangePass WHERE time_created > DATE_SUB(NOW(), INTERVAL 20 MINUTE)");
 // $token = mysqli_fetch_assoc($result);
 
 // check for existing pass reset
@@ -95,7 +95,7 @@ try {
 
     // content
     $mail->Subject = "Esports Inventory Password Reset";
-    $mail->Body = "This link will expire after ten minutes.\n\n" .
+    $mail->Body = "This link will expire after twenty minutes.\n\n" .
                    $url . "resetPassword.php?token=" . $token;
 
     $mail->send();

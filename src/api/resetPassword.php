@@ -39,7 +39,7 @@ $new = password_hash($new, PASSWORD_DEFAULT);
 // check that the token matches, prevents tomfoolery from 
 // anyone who may try to bypass the site and just hits the API
 
-$result = mysqli_query($connection, "SELECT token FROM changepass WHERE time_created > DATE_SUB(NOW(), INTERVAL 10 MINUTE) LIMIT 1");
+$result = mysqli_query($connection, "SELECT token FROM changepass WHERE time_created > DATE_SUB(NOW(), INTERVAL 20 MINUTE) LIMIT 1");
 
 // make sure token hasn't expired
 if(mysqli_num_rows($result) < 1){
