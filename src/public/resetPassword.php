@@ -11,7 +11,6 @@ include '../api/getResetToken.php';
 
 // make sure token matches
 if($token != $_GET["token"]){
-    session_destroy();
     header("Location: login.php?token=invalid");
 }
 
