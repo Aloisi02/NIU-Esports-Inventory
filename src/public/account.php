@@ -318,7 +318,7 @@
 				const reason = res.reason;
 				
 				if(success == "true"){
-					alert("Password reset email sent successfully.");
+					alert("Password reset email sent successfully. (It may take up to 10 minutes to appear in your inbox)");
 				} else {
 					alert(reason);
 				}

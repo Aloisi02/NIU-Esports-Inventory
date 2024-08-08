@@ -66,7 +66,7 @@
 				
 				// alert response
 				if(success == "true"){
-					alert("Password reset email sent successfully.");
+					alert("Password reset email sent successfully. (It may take up to 10 minutes to appear in your inbox)");
 					document.getElementById("email").value = "";
 				} else {
 					alert(reason);
