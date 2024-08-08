@@ -12,4 +12,4 @@ if(mysqli_num_rows($result) < 1){
     header("Location: login.php?token=error");
 }
 
-$token = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
+$token = mysqli_fetch_all($result, MYSQLI_ASSOC)[0]["token"];
