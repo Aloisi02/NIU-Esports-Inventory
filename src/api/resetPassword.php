@@ -39,7 +39,7 @@ $new = password_hash($new, PASSWORD_DEFAULT);
 // check that the token matches, prevents tomfoolery from 
 // anyone who may try to bypass the site and just hits the API
 
-$result = mysqli_query($connection, "SELECT token FROM changepass WHERE time_created > DATE_SUB(NOW(), INTERVAL 20 MINUTE) LIMIT 1");
+$result = mysqli_query($connection, "SELECT token FROM ChangePass WHERE time_created > DATE_SUB(NOW(), INTERVAL 20 MINUTE) LIMIT 1");
 
 // make sure token hasn't expired
 if(mysqli_num_rows($result) < 1){
@@ -60,7 +60,7 @@ if($statement = $connection->prepare("UPDATE Account SET password = ? WHERE user
     $statement->store_result();
 
     if($statement->affected_rows == 1){
-        mysqli_query($connection, "DELETE FROM changepass");
+        mysqli_query($connection, "DELETE FROM ChangePass");
         $response = ['success'=>'true'];
         http_response_code(200);
         die(json_encode($response));
