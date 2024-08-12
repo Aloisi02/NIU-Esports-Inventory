@@ -37,7 +37,7 @@ if(isset($_SESSION["loggedin"])){
 
     $email = trim($_POST['email']);
 
-    if(strtolower($email) != "marioman2002@gmail.com"){
+    if(strtolower($email) != "esports@niu.edu"){
         $response = ['success'=>'false','reason'=>'Unable to send password reset. Please double check your spelling.'];
         http_response_code(200);
         die(json_encode($response));
