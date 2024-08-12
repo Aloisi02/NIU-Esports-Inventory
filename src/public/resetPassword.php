@@ -127,7 +127,7 @@ if($token != $_GET["token"]){
 					document.getElementById("new").value = "";
 					document.getElementById("retype").value = "";
 					alert("Password change successful :)")
-                    window.location.replace(window.location.protocol + '//' + window.location.host + '/login');
+                    window.location.replace(window.location.protocol + '//' + window.location.host + '/src/public/login.php');
 				} else {
 					let output;
 					failedResponse(res.reason, "Failed to update password.");
