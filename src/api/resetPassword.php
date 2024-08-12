@@ -5,7 +5,7 @@ session_destroy();
 
 // get post data
 $_POST = json_decode(file_get_contents('php://input'), true);
-if(!isset($_POST['new'])){
+if(!isset($_POST['newPassword'])){
     header("Location: ../public/devices.php?type=PC");
     die();
 }
